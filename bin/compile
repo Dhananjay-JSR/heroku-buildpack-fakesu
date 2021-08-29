@@ -33,12 +33,19 @@ export DEBOOTSTRAP_DIR=$CACHE_DIR/.tools/debootstrap/usr/share/debootstrap
 
 echo "-----> Fetching and installing wget"
 cd $WGET_BUILD
+echo "-----> CD Wget Build"
 curl -O http://ftp.gnu.org/gnu/wget/wget-1.13.4.tar.bz2 >/dev/null 2>&1
+echo "-----> Download WGet"
 tar jxvf wget-1.13.4.tar.bz2 >/dev/null 2>&1
+echo "-----> Extract tar"
 cd wget-1.13.4
+echo "-----> CD"
 ./configure --prefix=$CACHE_DIR/.tools/wget --without-ssl >/dev/null 2>&1
+echo "-----> confihure directory"
 make >/dev/null 2>&1
+echo "-----> Make"
 make install >/dev/null 2>&1
+echo "-----> Make install"
 echo "wget installed" | indent
 
 echo "-----> Fetching and installing debootstrap"
